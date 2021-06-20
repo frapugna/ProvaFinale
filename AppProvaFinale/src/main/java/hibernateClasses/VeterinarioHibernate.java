@@ -5,4 +5,8 @@ public class VeterinarioHibernate {
 	String cognome;
 	String CF;
 	GattoHibernate gatto;
+	
+	public VeterinarioHibernate() {
+		super();
+	}
 }

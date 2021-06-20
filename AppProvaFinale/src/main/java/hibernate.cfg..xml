@@ -6,7 +6,7 @@
 	<session-factory>
 		<!-- Database connection settings -->
 		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://localhost:3306/RankingsDB?createDatabaseIfNotExist=true</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/TestDB?createDatabaseIfNotExist=true</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">(t3si2021ConGuerra)</property>
 		<property name="dialect"> org.hibernate.dialect.MySQL5InnoDBDialect</property>
@@ -15,11 +15,13 @@
 		<!-- Drop and re-create the database schema on startup -->
 		<property name="hbm2ddl.auto">create-drop</property>
 		
-		<mapping class="core.Person"/>
+		<mapping class="hibernateClasses.GattoDaEsposizioneHibernate"/>
 		
-		<mapping class="core.Skill"/>
+		<mapping class="hibernateClasses.GattoHibernate"/>
 		
-		<mapping class="core.Ranking"/>
+		<mapping class="hibernateClasses.VeterinarioHibernate"/>
+		
+		<mapping class="hibernateClasses.VotoHibernate"/>
 		
 	</session-factory>
 </hibernate-configuration>
