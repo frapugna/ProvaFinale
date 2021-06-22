@@ -52,7 +52,7 @@ public class TestCreazioneDB {
 //		t3.run();
 		TestCancellazioneHibernate t5 = new TestCancellazioneHibernate();
 //		t5.run();
-//		System.out.println(t5.showResult());
+		System.out.println(t.showResult());
 		
 	}
 

@@ -52,6 +52,20 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd"
 			<scope>test</scope>
 		</dependency>
 		
+		<!-- SQLite Dialect x HB4 -->
+		<dependency>
+			<groupId>com.enigmabridge</groupId>
+			<artifactId>hibernate4-sqlite-dialect</artifactId>
+			<version>0.1.2</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>3.34.0</version>
+		</dependency>
+		
 	</dependencies>
 	<build>
 		<plugins>

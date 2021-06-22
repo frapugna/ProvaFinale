@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">org.sqlite.JDBC</property>
+		<property name="connection.url">jdbc:sqlite:dbProva2.db</property>
+	
+		<property name="dialect">com.enigmabridge.hibernate.dialect.SQLiteDialect</property>
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hbm2ddl.auto">create-drop</property>
+
+		<mapping class="hibernateClasses.GattoDaEsposizioneHibernate"/>
+		
+		<mapping class="hibernateClasses.GattoHibernate"/>
+		
+		<mapping class="hibernateClasses.VeterinarioHibernate"/>
+		
+		<mapping class="hibernateClasses.VotoHibernate"/>
+		
+	</session-factory>
+</hibernate-configuration>

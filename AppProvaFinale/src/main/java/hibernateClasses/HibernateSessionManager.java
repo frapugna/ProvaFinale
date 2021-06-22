@@ -14,7 +14,7 @@ public class HibernateSessionManager {
 		 * Metodo che si occupa di creare un oggetto factory connettendosi al db indicato nel file .xml
 		 */
 		StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-				.configure()
+				.configure("hibernate.cfg.xml")
 				.build();
 		factory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
 	}

@@ -1,6 +1,7 @@
-/prove/
+/hibernateSqlite.cfg.xml
 /hibernateClasses/
-/core/
-/factory/
-/gui/
+/hibernate.cfg.xml
+/prove/
 /launchcode/
+/jdbcClasses/
+/factory/
