@@ -1,9 +1,9 @@
 package core;
 
-import antlr.collections.List;
+import java.util.List;
 
 public interface UserInterface {
 	public String selectTests(String input);
-	public void showResult(List test);
+	public void showResult(List<Test> test);
 	public boolean askForClose();
 }
