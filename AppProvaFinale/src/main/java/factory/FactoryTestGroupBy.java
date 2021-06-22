@@ -7,6 +7,7 @@ import core.FactoryInterface;
 import core.Test;
 import hibernateClasses.sqliteTests.TestGroupByHibernateSqlite;
 import hibernateClasses.tests.TestGroupByHibernate;
+import jdbcClasses.sqliteTests.TestGroupByJDBCSqlite;
 import jdbcClasses.tests.TestGroupByJDBC;
 
 public class FactoryTestGroupBy implements FactoryInterface{
@@ -19,6 +20,8 @@ public class FactoryTestGroupBy implements FactoryInterface{
 		out.add(new TestGroupByJDBC());
 		
 		out.add(new TestGroupByHibernateSqlite());
+		
+		out.add(new TestGroupByJDBCSqlite());
 		
 		return out;
 	}

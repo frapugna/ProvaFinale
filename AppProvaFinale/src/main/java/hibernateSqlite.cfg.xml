@@ -6,7 +6,7 @@
 	<session-factory>
 		<!-- Database connection settings -->
 		<property name="connection.driver_class">org.sqlite.JDBC</property>
-		<property name="connection.url">jdbc:sqlite:dbProva2.db</property>
+		<property name="connection.url">jdbc:sqlite:TestDbHibernateSqlite.db</property>
 	
 		<property name="dialect">com.enigmabridge.hibernate.dialect.SQLiteDialect</property>
 		<!-- Echo all executed SQL to stdout -->

@@ -7,6 +7,7 @@ import core.FactoryInterface;
 import core.Test;
 import hibernateClasses.sqliteTests.TestCancellazioneHibernateSqlite;
 import hibernateClasses.tests.TestCancellazioneHibernate;
+import jdbcClasses.sqliteTests.TestCancellazioneJDBCSqlite;
 import jdbcClasses.tests.TestCancellazioneJDBC;
 
 public class FactoryTestCancellazione implements FactoryInterface{
@@ -19,6 +20,8 @@ public class FactoryTestCancellazione implements FactoryInterface{
 		out.add(new TestCancellazioneJDBC());
 		
 		out.add(new TestCancellazioneHibernateSqlite());
+		
+		out.add(new TestCancellazioneJDBCSqlite());
 		
 		return out;
 	}

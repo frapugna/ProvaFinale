@@ -7,7 +7,7 @@ import core.FactoryInterface;
 import core.Test;
 import hibernateClasses.sqliteTests.TestCountHibernateSqlite;
 import hibernateClasses.tests.TestCountHibernate;
-
+import jdbcClasses.sqliteTests.TestCountJDBCSqlite;
 import jdbcClasses.tests.TestCountJDBC;
 
 public class FactoryTestCount implements FactoryInterface{
@@ -20,6 +20,8 @@ public class FactoryTestCount implements FactoryInterface{
 		out.add(new TestCountJDBC());
 		
 		out.add(new TestCountHibernateSqlite());
+		
+		out.add(new TestCountJDBCSqlite());
 		
 		return out;
 	}

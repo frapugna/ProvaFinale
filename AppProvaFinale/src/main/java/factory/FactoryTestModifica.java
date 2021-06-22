@@ -7,6 +7,7 @@ import core.FactoryInterface;
 import core.Test;
 import hibernateClasses.sqliteTests.TestModificaHibernateSqlite;
 import hibernateClasses.tests.TestModificaHibernate;
+import jdbcClasses.sqliteTests.TestModificaJDBCSqlite;
 import jdbcClasses.tests.TestModificaJDBC;
 
 public class FactoryTestModifica implements FactoryInterface{
@@ -19,6 +20,8 @@ public class FactoryTestModifica implements FactoryInterface{
 		out.add(new TestModificaJDBC());
 		
 		out.add(new TestModificaHibernateSqlite());
+		
+		out.add(new TestModificaJDBCSqlite());
 		
 		return out;
 	}

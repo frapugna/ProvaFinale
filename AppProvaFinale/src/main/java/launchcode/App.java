@@ -17,14 +17,27 @@ import gui.CLI;
 import hibernateClasses.HibernateSessionManager;
 import hibernateClasses.HibernateSessionManagerSqlite;
 import jdbcClasses.JDBCManager;
+import jdbcClasses.JDBCManagerSqlite;
 
 public class App {
 
 	public static void main(String[] args) {
+		
+	
+		
 		HibernateSessionManager.setup();
 		HibernateSessionManagerSqlite.setup();
 		try {
 			JDBCManager.setup();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			JDBCManagerSqlite.setup();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -42,9 +55,14 @@ public class App {
 		FactoryManager fm = new FactoryManager(factories);
 		TestManager tm = new TestManager(fm.istantiate(), new CLI());
 		do {
+			long start = System.nanoTime();
 			tm.runAll();
 			tm.displayAllResults();
+			long end = System.nanoTime();
+			System.out.println("Tempo per eseguire tutti i test: " + (end-start)/1000000000+"sec");
 		}while(tm.askForClose());
+		
+	
 
 	}
 

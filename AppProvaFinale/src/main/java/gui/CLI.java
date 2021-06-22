@@ -5,8 +5,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
-import java.util.Scanner;
-
 import core.Test;
 import core.UserInterface;
 
@@ -18,9 +16,15 @@ public class CLI implements UserInterface{
 	}
 
 	public void showResult(List<Test> tests) {
+		int j = 0;
 		System.out.println("--------------------ESITI--------------------");
 		for(Test i: tests) {
+			
+			if((j%4) == 0)
+				System.out.println(" ");
+			
 			System.out.println(i.showResult());
+			++j;
 		}
 		System.out.println("---------------------------------------------");
 	}
