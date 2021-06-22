@@ -1,4 +1,4 @@
-package hibernateClasses.tests;
+package hibernateClasses.sqliteTests;
 
 import java.util.Random;
 
@@ -10,11 +10,11 @@ import core.Esito;
 import core.Test;
 import hibernateClasses.GattoDaEsposizioneHibernate;
 import hibernateClasses.GattoHibernate;
-import hibernateClasses.HibernateSessionManager;
+import hibernateClasses.HibernateSessionManagerSqlite;
 import hibernateClasses.VotoHibernate;
 
-public class TestGroupByHibernate extends Test{
-	
+public class TestGroupByHibernateSqlite extends Test{
+
 	private void newGattoEsposizione(String nome, String colore, String razza, VotoHibernate voto, Session session) {
 
 		GattoHibernate gatto = new GattoDaEsposizioneHibernate(nome,colore,razza,voto);
@@ -28,7 +28,7 @@ public class TestGroupByHibernate extends Test{
 		Random r = new Random();
 		String[] colori = {"Rosso", "Bianco", "Nero"};
 		String[] razze = {"American Curl", "Burmilla", "Siberiano"}; 
-		try(Session session = HibernateSessionManager.getSession()) {
+		try(Session session = HibernateSessionManagerSqlite.getSession()) {
 			Transaction tx = session.beginTransaction();
 			for(int i = 0; i<1000; ++i) {
 				newGattoEsposizione(Integer.toString(i), colori[r.nextInt(3)],razze[r.nextInt(3)], new VotoHibernate(r.nextInt(11)),session);	
@@ -37,14 +37,13 @@ public class TestGroupByHibernate extends Test{
 		}
 		long start = System.nanoTime();
 		
-		Session session = HibernateSessionManager.getSession();
+		Session session = HibernateSessionManagerSqlite.getSession();
 		Query<?> query=session.createQuery("select avg(v.valutazione) from GattoDaEsposizioneHibernate as g, VotoHibernate as v where v.id=g.valutazione group by g.colore");
 		String esito = query.list().toString();
 
 		
 		Long end = System.nanoTime(); 
 //		System.out.println("Tempo esecuz: " + (end-start)/1000000 + "ms");
-		setEsito(new Esito("Test GroupBy Hibernate Mysql:"+(end-start)/1000000 + "ms; Medie calcolate: "+esito ));
+		setEsito(new Esito("Test GroupBy Hibernate Sqlite:"+(end-start)/1000000 + "ms; Medie calcolate: "+esito ));
 	}
-
 }

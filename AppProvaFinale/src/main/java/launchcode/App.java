@@ -15,12 +15,14 @@ import factory.FactoryTestInserimento;
 import factory.FactoryTestModifica;
 import gui.CLI;
 import hibernateClasses.HibernateSessionManager;
+import hibernateClasses.HibernateSessionManagerSqlite;
 import jdbcClasses.JDBCManager;
 
 public class App {
 
 	public static void main(String[] args) {
 		HibernateSessionManager.setup();
+		HibernateSessionManagerSqlite.setup();
 		try {
 			JDBCManager.setup();
 		} catch (ClassNotFoundException e) {

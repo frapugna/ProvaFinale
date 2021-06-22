@@ -20,7 +20,7 @@ public class TestCountHibernate extends Test{
 		
 		long end = System.nanoTime();
 //		System.out.println("Tempo esecuz: " + (end-start)/1000000 + "ms, trovati "+num+" elementi");
-		setEsito(new Esito("Test operazione di count Hibernate:"+(end-start)/1000000 + "ms; Elementi trovati: "+num ));
+		setEsito(new Esito("Test operazione di count Hibernate Mysql:"+(end-start)/1000000 + "ms; Elementi trovati: "+num ));
 	}
 
 }

@@ -39,7 +39,7 @@ public class TestInserimentoHibernate extends Test{
 		}
 		long end = System.nanoTime(); 
 //		System.out.println("Tempo esecuz: " + (end-start)/1000000 + "ms");
-		setEsito(new Esito("Test inserimento valori Hibernate:"+(end-start)/1000000 + "ms; Valori inseriti: 1000" ));
+		setEsito(new Esito("Test inserimento valori Hibernate Mysql:"+(end-start)/1000000 + "ms; Valori inseriti: 1000" ));
 	}
 
 }

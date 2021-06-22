@@ -5,6 +5,7 @@ import java.util.List;
 
 import core.FactoryInterface;
 import core.Test;
+import hibernateClasses.sqliteTests.TestInserimentoHibernateSqlite;
 import hibernateClasses.tests.TestInserimentoHibernate;
 import jdbcClasses.tests.TestInserimentoJDBC;
 
@@ -16,6 +17,8 @@ public class FactoryTestInserimento implements FactoryInterface{
 		out.add(new TestInserimentoHibernate());
 		
 		out.add(new TestInserimentoJDBC());
+		
+		out.add(new TestInserimentoHibernateSqlite());
 		
 		return out;
 	}
