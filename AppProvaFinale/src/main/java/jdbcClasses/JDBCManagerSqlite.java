@@ -9,9 +9,6 @@ import java.sql.Statement;
 
 public class JDBCManagerSqlite {
 	
-	public static final String JDBCDriverSQLite = "org.sqlite.JDBC";
-	public static final String JDBCURLSQLite = "jdbc:sqlite:test.db";
-
 	protected static Statement statementSqlite;
 	protected static Connection connectionSqlite;
 

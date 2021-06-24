@@ -8,8 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class JDBCManager {
-	public static final String JDBCDriverSQLite = "org.sqlite.JDBC";
-	public static final String JDBCURLSQLite = "jdbc:sqlite:test.db";
 
 	protected static Statement statementMysql;
 	protected static Connection connectionMysql;
