@@ -23,28 +23,6 @@ public class App {
 
 	public static void main(String[] args) {
 		
-	
-		
-		HibernateSessionManager.setup();
-		HibernateSessionManagerSqlite.setup();
-		try {
-			JDBCManager.setup();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try {
-			JDBCManagerSqlite.setup();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		List<FactoryInterface> factories = new ArrayList<FactoryInterface>(Arrays.asList(	
 				new FactoryTestInserimento(),
 				new FactoryTestCount(),
@@ -55,6 +33,27 @@ public class App {
 		FactoryManager fm = new FactoryManager(factories);
 		TestManager tm = new TestManager(fm.istantiate(), new CLI());
 		do {
+			HibernateSessionManager.setup();
+			HibernateSessionManagerSqlite.setup();
+			try {
+				JDBCManager.setup();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				JDBCManagerSqlite.setup();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			tm.selectTests();
 			long start = System.nanoTime();
 			tm.runAll();
 			tm.displayAllResults();

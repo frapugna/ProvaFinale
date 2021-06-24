@@ -11,7 +11,14 @@ import core.UserInterface;
 public class CLI implements UserInterface{
 	
 	public String selectTests(String input) {
-		// TODO Auto-generated method stub
+		System.out.println("---------------------------------------------");
+		System.out.println("Premere invio per iniziare i test:");
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			in.readLine();
+		} catch (IOException e) {
+		}
 		return null;
 	}
 

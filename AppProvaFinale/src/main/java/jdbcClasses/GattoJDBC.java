@@ -49,7 +49,5 @@ public class GattoJDBC {
 	
 	public void addVeterinario(VeterinarioJDBC in) {
 		this.veterinari.add(in);
-	}
-	
-	
+	}	
 }

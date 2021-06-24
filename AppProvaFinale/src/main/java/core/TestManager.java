@@ -13,7 +13,7 @@ public class TestManager {
 	}
 	
 	public void selectTests() {
-		
+		gui.selectTests(null);
 	}
 	
 	public void runAll() {
